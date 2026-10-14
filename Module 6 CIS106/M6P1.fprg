@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6P1"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-14 09:56:56 AM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTQ7MDk6Mzg6MTUgQU07MjkyMg=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTQ7MDk6NTY6NTYgQU07MTszMDM1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="price, extendedprice, taxamount, totalcost" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <if expression="quantity&gt;10000">
+                <then>
+                    <assign variable="price" expression="10.00"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="quantity&gt;=5000 AND quantity&lt;=10000">
+                <then>
+                    <assign variable="price" expression="20.00"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="price" expression="30.00"/>
+            <assign variable="extendedprice" expression="quantity*price"/>
+            <assign variable="taxamount" expression="extendedprice*0.07"/>
+            <assign variable="totalcost" expression="extendedprice+taxamount"/>
+            <output expression="&quot;Extended Price: $&quot; &amp; extendedPrice" newline="True"/>
+            <output expression="&quot;Tax Amount:     $&quot; &amp; taxAmount" newline="True"/>
+            <output expression="&quot;Total Cost:     $&quot; &amp; totalCost" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

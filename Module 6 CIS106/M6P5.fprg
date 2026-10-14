@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6P5"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-14 11:55:14 AM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTQ7MTE6Mzk6MzYgQU07MjkxOQ=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTQ7MTE6NTU6MTQgQU07MjszMDIy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="salary, bonusrate, bonusamount" type="Real" array="False" size=""/>
+            <declare name="joblevel" type="Integer" array="False" size=""/>
+            <input variable="lastname"/>
+            <input variable="salary"/>
+            <input variable="joblevel"/>
+            <if expression="joblevel&gt;=10">
+                <then>
+                    <assign variable="bonusrate" expression="0.25"/>
+                </then>
+                <else>
+                    <if expression="joblevel&gt;=5 AND joblevel&lt;=9">
+                        <then>
+                            <assign variable="bonusrate" expression="0.20"/>
+                        </then>
+                        <else>
+                            <assign variable="bonusrate" expression="0.10"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="bonusamount" expression="salary*bonusrate"/>
+            <output expression="&quot;Employee Last Name: &quot; &amp; lastName" newline="True"/>
+            <output expression="&quot;Salary:             $&quot; &amp; salary" newline="True"/>
+            <output expression="&quot;Bonus Amount:       $&quot; &amp; bonusAmount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

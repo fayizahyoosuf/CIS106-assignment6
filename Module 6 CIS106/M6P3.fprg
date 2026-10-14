@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M6P3"/>
+        <attribute name="authors" value="shama"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-14 11:27:47 AM"/>
+        <attribute name="created" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTQ7MTA6MjQ6NTMgQU07MjkxMQ=="/>
+        <attribute name="edited" value="c2hhbWE7REVTS1RPUC1HSFRTUVVGOzIwMjYtMTAtMTQ7MTE6Mjc6NDcgQU07MTszMDI2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="principle, interestRate, firstYearInterest" type="Real" array="False" size=""/>
+            <declare name="years" type="Integer" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <input variable="principle"/>
+            <input variable="years"/>
+            <if expression="principle&lt;50000">
+                <then>
+                    <assign variable="rate" expression="0.02"/>
+                </then>
+                <else>
+                    <if expression="principle&lt;=10000">
+                        <then>
+                            <if expression="years&gt;=10">
+                                <then>
+                                    <assign variable="rate" expression="0.05"/>
+                                </then>
+                                <else>
+                                    <if expression="years&gt;=5">
+                                        <then>
+                                            <assign variable="rate" expression="0.04"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="rate" expression="0.02"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="years&gt;=10">
+                                <then>
+                                    <assign variable="rate" expression="0.05"/>
+                                </then>
+                                <else>
+                                    <assign variable="rate" expression="0.02"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="firstyearinterest" expression="principle * Rate"/>
+            <output expression="&quot;Principle Amount:    $&quot; &amp; principle" newline="True"/>
+            <output expression="&quot;Interest Rate:       &quot; &amp; (Rate * 100) &amp; &quot;%&quot;" newline="True"/>
+            <output expression="&quot;First Year Interest: $&quot; &amp; firstYearInterest" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
